@@ -5,10 +5,8 @@ const profileController = async (req, res) => {
   const token = req.cookies?.authToken;
   if (token) {
     jwt.verify(token, process.env.JWTPRIVATEKEY, {}, async (err, userData) => {
-      // console.log('userData',userData);
       if (err) throw err;
-      const user = await User.findOne({ _id: userData._id });
-      // console.log('user',user);
+      const user = await User.findOne({ _id: userData._id }, { password: 0, createdAt: 0, updatedAt: 0 , verificationLinkSent: 0 });
       
       res.json(user);
     });

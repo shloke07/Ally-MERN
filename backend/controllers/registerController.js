@@ -11,9 +11,7 @@ const registerController = async (req, res) => {
             return res.status(400).send({ message: error.details[0].message })
         }
 
-        
-        
-        //Check if user with given mail already exists
+
         let user = await User.findOne({ email: req.body.email });
 
         if (user && user.verified) {

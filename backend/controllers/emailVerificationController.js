@@ -14,11 +14,6 @@ const verifyEmail = async (req, res) => {
         }
 
 
-        // console.log(JSON.stringify(user));
-        
-    
-    
-        //Find the token of user
         const token = await Token.findOne({
             userId: user._id,
             token: req.params.token

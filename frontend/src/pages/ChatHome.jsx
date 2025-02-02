@@ -61,6 +61,7 @@ const ChatHome = () => {
 
   useEffect(() => {
     axios.get("/api/user/people").then((res) => {
+      console.log("people api res: ", res)
       const offlinePeopleArr = res?.data
         .filter((p) => p._id !== userDetails?._id)
         .filter((p) => !onlinePeople[p._id]);

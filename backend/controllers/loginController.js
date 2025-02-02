@@ -12,9 +12,8 @@ const loginController = async (req, res) => {
             })
         }
 
-        //Find user by email
         const user = await User.findOne({ email: req.body.email });
-        // console.log('user',user);
+        
         
 
         if(!user){
@@ -43,7 +42,7 @@ const loginController = async (req, res) => {
         }
 
 
-        //Generate authentication token and send success login response
+        
 
         const token = user.generateAuthToken();
         

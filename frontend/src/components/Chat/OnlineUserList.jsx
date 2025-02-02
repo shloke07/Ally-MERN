@@ -21,6 +21,9 @@ const OnlineUsersList = ({
     return fullName.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
+  console.log();
+  
+
   return (
     <section className="w-[29%] py-3 border-r px-2 lg:px-4 border-gray-700">
       <div className="text-white flex items-center gap-2 p-1 px-2 lg:p-3 mt-1 mb-3 lg:mb-6 bg-primary w-[90%] mx-auto rounded-2xl">
