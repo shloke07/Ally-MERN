@@ -44,24 +44,9 @@ const ChatHome = () => {
     });
   }, [userDetails, selectedUserId]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      if (selectedUserId) {
-        try {
-          const res = await axios.get(`/api/user/messages/${selectedUserId}`);
-          setMessages(res.data);
-        } catch (error) {
-          console.error("Error fetching messages:", error);
-        }
-      }
-    };
-
-    fetchData();
-  }, [selectedUserId]);
 
   useEffect(() => {
     axios.get("/api/user/people").then((res) => {
-      console.log("people api res: ", res)
       const offlinePeopleArr = res?.data
         .filter((p) => p._id !== userDetails?._id)
         .filter((p) => !onlinePeople[p._id]);

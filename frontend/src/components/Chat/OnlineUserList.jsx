@@ -21,7 +21,6 @@ const OnlineUsersList = ({
     return fullName.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
-  console.log();
   
 
   return (
