@@ -27,17 +27,17 @@ const Login = () => {
     e.preventDefault();
     try {
       const url = "/api/user/login";
-      const response = await axios.post(url, data, {
-        withCredentials: true, 
-      });
+      const response = await axios.post(url, data);
 
     //   console.log(response.message);
       if (response.status == 200) {
+        const { token } = response.data;
+        localStorage.setItem("authToken", token);
         toast.success(response.data.message);
         setAuthenticated(true);
-        const token = Cookies.get("authToken");
+        // const token = Cookies.get("authToken");
         console.log("COOKIE---",token);
-        console.log("COOKIE2---",Cookies.get("authtoken"));
+
         
         
       }

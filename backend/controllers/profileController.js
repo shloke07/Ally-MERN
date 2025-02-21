@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const { User } = require("../models/userModel");
 
 const profileController = async (req, res) => {
-  const token = req.body.authtoken || req.headers.authtoken || req.query.authtoken;
+  const token = req.body.authtoken || req.headers.Authorization || req.query.authtoken;
   // const token = req.cookies?.authToken;
   if (token) {
     jwt.verify(token, process.env.JWTPRIVATEKEY, {}, async (err, userData) => {
@@ -18,7 +18,7 @@ const profileController = async (req, res) => {
 
 const profileUpdate = async (req, res) => {
   // const token = req.cookies?.authToken;
-  const token = req.body.authtoken || req.headers.authtoken || req.query.authtoken;
+  const token = req.body.authtoken || req.headers.Authorization || req.query.authtoken;
 
   if (token) {
     jwt.verify(token, process.env.JWTPRIVATEKEY, {}, (err, userData) => {

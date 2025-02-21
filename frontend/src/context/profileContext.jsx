@@ -11,12 +11,9 @@ export const ProfileProvider = ({ children }) => {
       try {
         const response = await axios.post(
           "https://ally-chat-express-app.onrender.com/api/user/profile",
-          { authtoken: token }, // Payload with the token
           {
-            headers: {
-              "Content-Type": "application/json", // Explicitly set content type
-            },
-          }
+            headers: { Authorization: `Bearer ${token}` },
+          } 
         );
         // console.log(response.data);
         setUserDetails(response.data);

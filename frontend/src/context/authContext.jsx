@@ -9,7 +9,8 @@ export const AuthProvider = ({ children }) => {
     setIsAuthenticated(value);
   };
   const checkAuth = () => {
-    const token = Cookies.get("authToken");
+    // const token = Cookies.get("authToken");
+    const token = localStorage.getItem("authToken");
       console.log("Checking authentication...");
       if (token) {
         console.log("Token exists. Setting authenticated to true.");
@@ -22,7 +23,8 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    Cookies.remove("authToken");
+    // Cookies.remove("authToken");
+    localStorage.remove("authToken")
     setAuthenticated(false);
   };
   return (
