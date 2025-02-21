@@ -37,6 +37,7 @@ const Login = () => {
         setAuthenticated(true);
         const token = Cookies.get("authToken");
         console.log("COOKIE---",token);
+        console.log("COOKIE2---",Cookies.get("authtoken"));
         
         
       }
