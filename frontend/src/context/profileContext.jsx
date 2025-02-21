@@ -2,7 +2,6 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import { useAuth } from "./authContext";
 import axios from "axios";
 const ProfileContext = createContext();
-import { useLocation } from "react-router-dom";
 
 export const ProfileProvider = ({ children }) => {
   const { isAuthenticated } = useAuth();
