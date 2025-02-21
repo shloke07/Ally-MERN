@@ -23,7 +23,7 @@ const Profile = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.put("/api/user/profile/update", {
+      const response = await axios.post("/api/user/profile/update", {
         ...formData,
         avatarLink: selectedLink,
       });

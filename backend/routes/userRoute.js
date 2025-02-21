@@ -11,9 +11,9 @@ const router = express.Router();
 router.post("/register", registerController);
 router.post("/login", loginController);
 router.get("/:id/verify/:token", verifyEmail);
-router.get("/profile", profileController.profileController);
+router.post("/profile", profileController.profileController);
 router.get("/messages/:userId", messageController);
 router.get("/people", peopleController);
-router.put("/profile/update", profileController.profileUpdate);
+router.post("/profile/update", profileController.profileUpdate);
 
 module.exports = router;

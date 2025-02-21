@@ -10,10 +10,13 @@ export const ProfileProvider = ({ children }) => {
   useEffect(() => {
     const fetchUserDetails = async () => {
       try {
-        const response = await axios.get(
+        const response = await axios.post(
           "https://ally-chat-express-app.onrender.com/api/user/profile",
+          { authtoken: token }, // Payload with the token
           {
-            withCredentials:true
+            headers: {
+              "Content-Type": "application/json", // Explicitly set content type
+            },
           }
         );
         // console.log(response.data);
