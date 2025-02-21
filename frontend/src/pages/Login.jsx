@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
+import Cookies from "js-cookie";
 import { useAuth } from "../context/authContext";
 
 const Login = () => {
@@ -34,7 +35,9 @@ const Login = () => {
       if (response.status == 200) {
         toast.success(response.data.message);
         setAuthenticated(true);
-        console.log(`Cookie----${document.cookie}`);
+        const token = Cookies.get("authToken");
+        console.log("COOKIE---",token);
+        
         
       }
     } catch (error) {
