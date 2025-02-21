@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
     setIsAuthenticated(value);
   };
   const checkAuth = () => {
-    const token = Cookies.get("authToken");
+    const token = Cookies.get("authtoken");
       console.log("Checking authentication...");
       if (token) {
         console.log("Token exists. Setting authenticated to true.");
@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    Cookies.remove("authToken");
+    Cookies.remove("authtoken");
     setAuthenticated(false);
   };
   return (

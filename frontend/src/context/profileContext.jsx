@@ -11,7 +11,10 @@ export const ProfileProvider = ({ children }) => {
     const fetchUserDetails = async () => {
       try {
         const response = await axios.get(
-          "/api/user/profile"
+          "https://ally-chat-express-app.onrender.com/api/user/profile",
+          {
+            withCredentials:true
+          }
         );
         // console.log(response.data);
         setUserDetails(response.data);

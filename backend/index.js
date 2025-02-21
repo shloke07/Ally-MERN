@@ -25,7 +25,8 @@ const allowedOrigins = [
     "http://localhost:4173",
     "http://localhost:5173",
     "https://swifty-chatty-appy.onrender.com",
-    "https://ally-chat-express-app.onrender.com"
+    "https://ally-chat-express-app.onrender.com",
+    "https://ally-mern.onrender.com"
 ]
 
 const corsOptions = {
