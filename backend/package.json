@@ -6,12 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "docker": "docker build --no-cache -t shloke07/ally-chat-express-app:latest ."
   },
   "author": "Shloke Manan",
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "chalk": "^4.1.2",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
@@ -21,6 +23,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.12.0",
     "mongoose": "^8.9.5",
+    "morgan": "^1.10.0",
     "nodemailer": "^6.10.0",
     "nodemon": "^3.1.9",
     "path": "^0.12.7",

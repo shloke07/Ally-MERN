@@ -10,14 +10,15 @@ export const AuthProvider = ({ children }) => {
   };
   const checkAuth = () => {
     const token = Cookies.get("authToken");
-    console.log("Checking authentication...");
-    if (token) {
-      console.log("Token exists. Setting authenticated to true.");
-      setAuthenticated(true);
-    } else {
-      console.log("Token does not exist. Setting authenticated to false.");
-      setAuthenticated(false);
-    }
+      console.log("Checking authentication...");
+      if (token) {
+        console.log("Token exists. Setting authenticated to true.");
+        setAuthenticated(true);
+      } else {
+        console.log("Token does not exist. Setting authenticated to false.");
+        setAuthenticated(false);
+      }
+
   };
 
   const logout = () => {

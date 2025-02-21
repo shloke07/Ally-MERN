@@ -32,8 +32,10 @@ const Login = () => {
 
     //   console.log(response.message);
       if (response.status == 200) {
-        toast.success(response.message);
+        toast.success(response.data.message);
         setAuthenticated(true);
+        console.log(`Cookie----${document.cookie}`);
+        
       }
     } catch (error) {
       if (
