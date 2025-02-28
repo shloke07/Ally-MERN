@@ -9,7 +9,7 @@ const Features = () => {
             Designed for business teams like yours
           </h2>
           <p className="sm:text-xl text-gray-400">
-            Here at Swift we focus on markets where technology, innovation,
+            Here at Ally we focus on markets where technology, innovation,
             and capital can unlock long-term value and drive economic growth.
           </p>
         </div>

@@ -44,7 +44,7 @@ const Footer = () => {
         <span className="block text-sm  sm:text-center text-gray-400">
           © 2023{" "}
           <a className="hover:underline">
-            SwiftChat
+            AllyChat
           </a>
           . All Rights Reserved.
         </span>

@@ -30,10 +30,10 @@ export default function Avatar({ username, userId, isOnline, avatarLink }) {
             <img
               src={avatarLink}
               className="h-10 grid place-content-center"
-              alt={username[0]}
+              alt={username?username[0]:""}
             />
           ) : (
-            <span>{username[0]}</span>
+            <span>{username?username[0]:""}</span>
           )}
         </div>
   
